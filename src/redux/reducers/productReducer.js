@@ -46,9 +46,9 @@ export const productReducer = (state = initialState,{type,payload}) => {
             case ActionTypes.SORT_BY:
                 let sortedProducts;
                 if (payload === 'hightoLow') 
-                  sortedProducts = [...state.products].sort((a, b) => b.price - a.price);
+                  sortedProducts = [...state.products].sort((a, b) => parseInt(b.price) - parseInt(a.price));
                 else if (payload === 'lowtoHigh')
-                  sortedProducts = [...state.products].sort((a, b) => a.price - b.price);
+                  sortedProducts = [...state.products].sort((a, b) => parseInt(a.price) - parseInt(b.price));
                 else if (payload === 'alphabetical')
                   sortedProducts = [...state.products].sort((a, b) => a.title.localeCompare(b.title, undefined, { sensitivity: 'base' }));
                 else

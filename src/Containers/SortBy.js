@@ -4,7 +4,7 @@ import { setSortBy } from '../redux/actions/productAction';// Import your action
 
 const SortBy = () => {
   const dispatch = useDispatch();
-  const [selectedValue, setSelectedValue] = useState(0)
+  const [selectedValue, setSelectedValue] = useState('')
 
   const handleSortChange = (event) => {
     setSelectedValue(event.target.value);
